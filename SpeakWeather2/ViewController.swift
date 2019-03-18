@@ -23,7 +23,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let SanFrancisco = City(name: "San Francisco", condition: "Partly Cloudy", temp: "54")
     let Oakland = City(name: "Oakland", condition: "Sunny", temp: "70")
     let Antioch = City(name: "Antioch", condition: "Sunny", temp: "76")
-    
+    let SanLeandro = City(name: "San Leandro", condition: "Cloudy", temp: "56")
+    let cellScaling: CGFloat = 0.6
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteCities.count
@@ -34,7 +35,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.cityLabel.text = favoriteCities[indexPath.row].name
         cell.weatherConditionLabel.text = favoriteCities[indexPath.row].condition
         cell.temperatureLabel.text = favoriteCities[indexPath.row].temp
-        cell.layer.cornerRadius = 25
+        
         
         return cell
         
@@ -55,12 +56,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         favoriteCities.append(SanFrancisco)
         favoriteCities.append(Oakland)
         favoriteCities.append(Antioch)
+        favoriteCities.append(SanLeandro)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.reloadData()
+        //collectionView.reloadData()
+        
+//        let screenSize = UIScreen.main.bounds.size
+//        let cellWidth = floor(screenSize.width * cellScaling)
+//        let cellHeight = floor(screenSize.height * cellScaling)
+//        
+//        let insetX = (view.bounds.width - cellWidth) / 2.0
+//        let insetY = (view.bounds.height - cellHeight) / 2.0
+//        
+//        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        
+//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+//        collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+        collectionView.dataSource = self
     }
     
     
