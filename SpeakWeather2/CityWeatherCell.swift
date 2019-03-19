@@ -18,8 +18,8 @@ class CityWeatherCell:UICollectionViewCell {
         super.layoutSubviews()
         layer.cornerRadius = 20
         self.clipsToBounds = false
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 0.85
+        layer.shadowRadius = 10
+        layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 5, height: 10)
     }
 }
