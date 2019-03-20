@@ -12,19 +12,20 @@ struct City {
     let name: String
     let condition: String
     let temp: String
+    let image: UIImage
 }
 
 var favoriteCities = [City]()
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    let SanFrancisco = City(name: "San Francisco", condition: "Partly Cloudy", temp: "54")
-    let Oakland = City(name: "Oakland", condition: "Sunny", temp: "70")
-    let Antioch = City(name: "Antioch", condition: "Sunny", temp: "76")
-    let SanLeandro = City(name: "San Leandro", condition: "Cloudy", temp: "56")
+    let SanFrancisco = City(name: "San Francisco", condition: "Partly Cloudy", temp: "54", image: UIImage(named: "SF")!)
+    let Oakland = City(name: "Oakland", condition: "Sunny", temp: "70", image: UIImage(named: "Oakland")!)
+    let Antioch = City(name: "Antioch", condition: "Sunny", temp: "76", image: UIImage(named:"Antioch")!)
+    let SanLeandro = City(name: "San Leandro", condition: "Cloudy", temp: "56", image: UIImage(named: "SAN LEANDRO")!)
     let cellScaling: CGFloat = 0.6
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -32,33 +33,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        while 0 == 0 {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CityWeatherCell
         cell.cityLabel.text = favoriteCities[indexPath.row].name
         cell.weatherConditionLabel.text = favoriteCities[indexPath.row].condition
         cell.temperatureLabel.text = favoriteCities[indexPath.row].temp
-       
-            if cell.cityLabel.text == "San Francisco" {
-                backgroundImageView.image = UIImage(named: "SF")
-            } else if cell.cityLabel.text == "Oakland" {
-                backgroundImageView.image = UIImage(named: "Oakland")
-            
-        }
+        
         return cell
         
-    }
-    }
-    //Trying to create method to dynamically make cell centered in collectionView
-    //   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     
-    //    let totalCellWidth = CellWidth * CellCount
-    //    let totalSpacingWidth = CellSpacing * (CellCount - 1)
-    //
-    //    let leftInset = (collectionViewWidth - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-    //    let rightInset = leftInset
-    //
-    //    return UIEdgeInsetsMake(0, leftInset, 0, rightInset)
-    //    }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        backgroundImageView.image = favoriteCities[indexPath.row].image
+    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         favoriteCities.append(SanFrancisco)
