@@ -19,6 +19,8 @@ var favoriteCities = [City]()
 
 class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
+    @IBOutlet weak var weatherImage: UIImageView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -48,6 +50,11 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         backgroundImageView.image = favoriteCities[indexPath.row].image
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset)
+        
+    }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,20 +68,6 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //collectionView.reloadData()
-        
-        //        let screenSize = UIScreen.main.bounds.size
-        //        let cellWidth = floor(screenSize.width * cellScaling)
-        //        let cellHeight = floor(screenSize.height * cellScaling)
-        //        
-        //        let insetX = (view.bounds.width - cellWidth) / 2.0
-        //        let insetY = (view.bounds.height - cellHeight) / 2.0
-        //
-        //        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        //
-        //        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        //        collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         collectionView.dataSource = self
     }
     

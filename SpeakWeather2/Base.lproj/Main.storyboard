@@ -33,6 +33,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="717"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-1z-bzY">
+                                        <rect key="frame" x="122" y="449" width="130" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -109,6 +113,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="aVr-hC-PYh" id="fcn-yt-eTx"/>
                         <outlet property="collectionView" destination="CEV-Vi-W4H" id="fIG-CS-RBy"/>
+                        <outlet property="weatherImage" destination="xgc-1z-bzY" id="v3r-b0-ptA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
