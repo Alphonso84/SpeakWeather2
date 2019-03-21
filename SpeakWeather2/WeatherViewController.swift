@@ -29,7 +29,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     let Antioch = City(name: "Antioch", condition: "Sunny", temp: "76", image: UIImage(named:"Antioch")!)
     let SanLeandro = City(name: "San Leandro", condition: "Cloudy", temp: "56", image: UIImage(named: "SAN LEANDRO")!)
     let cellScaling: CGFloat = 0.6
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteCities.count
     }
@@ -47,12 +47,27 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        backgroundImageView.image = favoriteCities[indexPath.row].image
+       
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
+        print(scrollView.contentOffset.x)
+//  Changing the backGroundImage based on where the user scrolls.
+        let offset = scrollView.contentOffset.x
         
+        if offset < 216.5 {
+            backgroundImageView.image = favoriteCities[0].image
+        } else if offset < 433 {
+            backgroundImageView.image = favoriteCities[1].image
+        } else if offset < 649.5 {
+            backgroundImageView.image = favoriteCities[2].image
+        } else if offset < 866 {
+            backgroundImageView.image = favoriteCities[3].image
+        } else if offset >= 866 {
+            backgroundImageView.image = favoriteCities[3].image
+        }
+        
+    
     }
     
     
