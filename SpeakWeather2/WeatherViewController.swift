@@ -40,10 +40,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.cityLabel.text = favoriteCities[indexPath.row].name
         cell.weatherConditionLabel.text = favoriteCities[indexPath.row].condition
         cell.temperatureLabel.text = favoriteCities[indexPath.row].temp
-        
         return cell
-        
-    
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -67,6 +64,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
             backgroundImageView.image = favoriteCities[3].image
         }
         
+       
     
     }
     
