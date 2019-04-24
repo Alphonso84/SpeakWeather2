@@ -22,7 +22,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var weatherImage: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
+   
     
     let SanFrancisco = City(name: "San Francisco", condition: "Partly Cloudy", temp: "54", image: UIImage(named: "SF")!)
     let Oakland = City(name: "Oakland", condition: "Sunny", temp: "70", image: UIImage(named: "Oakland")!)
@@ -53,15 +53,15 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         let offset = scrollView.contentOffset.x
         
         if offset < 216.5 {
-            backgroundImageView.image = favoriteCities[0].image
+            //backgroundImageView.image = favoriteCities[0].image
         } else if offset < 433 {
-            backgroundImageView.image = favoriteCities[1].image
+           // backgroundImageView.image = favoriteCities[1].image
         } else if offset < 649.5 {
-            backgroundImageView.image = favoriteCities[2].image
+           // backgroundImageView.image = favoriteCities[2].image
         } else if offset < 866 {
-            backgroundImageView.image = favoriteCities[3].image
+           // backgroundImageView.image = favoriteCities[3].image
         } else if offset >= 866 {
-            backgroundImageView.image = favoriteCities[3].image
+           // backgroundImageView.image = favoriteCities[3].image
         }
         
        
