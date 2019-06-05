@@ -31,7 +31,7 @@
                                         <rect key="frame" x="8" y="380" width="359" height="320"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="81" id="Y63-Xj-NRC">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="81" id="Y63-Xj-NRC">
                                                 <rect key="frame" x="0.0" y="28" width="359" height="81"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y63-Xj-NRC" id="nAc-2N-5f3">
@@ -49,6 +49,10 @@
                                             <segment title="Week"/>
                                         </segments>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="HourOrWeek:" destination="BYZ-38-t0r" eventType="valueChanged" id="2pt-Gx-6Vo"/>
+                                            <action selector="HourOrWeek:" destination="FLf-fp-ada" eventType="valueChanged" id="U7G-u1-OdP"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,9 +164,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="CEV-Vi-W4H" id="fIG-CS-RBy"/>
+                        <outlet property="segmentedControl" destination="Bd9-01-FDi" id="HGw-gC-oNU"/>
+                        <outlet property="tableView" destination="1Xz-Wj-6WY" id="riT-DP-KKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="FLf-fp-ada" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="22.906403940886701"/>
         </scene>

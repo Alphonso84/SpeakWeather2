@@ -17,7 +17,23 @@ struct City {
 
 var favoriteCities = [City]()
 
-class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
+    var wasSwitched = false
+    var Hourly = [Date]()
+    var Weekly = [String]()
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    @IBAction func HourOrWeek(_ sender: Any) {
+        tableView.reloadData()
+        wasSwitched = !wasSwitched
+     print("\(wasSwitched)")
+        returnTableRows()
+            
+   }
+    
     
     @IBOutlet weak var weatherImage: UIImageView!
     
@@ -64,8 +80,29 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
            // backgroundImageView.image = favoriteCities[3].image
         }
         
-       
+    }
     
+    func returnTableRows() -> Int {
+        
+        if wasSwitched == false {
+            return 5
+        }else{
+            return 10
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return returnTableRows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        if wasSwitched == true{
+        cell.textLabel?.text = "Week"
+        }else{
+            cell.textLabel?.text = "Today"
+        }
+        return cell
     }
     
     
@@ -80,7 +117,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.dataSource = self
         collectionView.dataSource = self
     }
     
