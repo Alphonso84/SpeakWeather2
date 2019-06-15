@@ -104,11 +104,11 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         return cell
     }
-   
-//    func addFavoriteCity(name:String) ->City {
-//
-//        return City
-//    }
+    
+    //    func addFavoriteCity(name:String) ->City {
+    //
+    //        return City
+    //    }
     
     override func viewWillAppear(_ animated: Bool) {
         favoriteCities.append(SanFrancisco)
