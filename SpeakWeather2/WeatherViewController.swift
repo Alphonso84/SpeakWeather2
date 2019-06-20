@@ -18,7 +18,7 @@ struct City {
 var favoriteCities = [City]()
 
 class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var tableView: UITableView!
     var wasSwitched = false
     var Hourly = [Date]()
@@ -122,6 +122,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         tableView.dataSource = self
         collectionView.dataSource = self
+        Networking().getSelectedWeatherForecast()
     }
     
     
