@@ -11,15 +11,15 @@ import CoreLocation
 
 class Networking {
     
-    let apiKey = ""
+    let apiKey = "8a0189f3ea88f1c0c56e4845fdf28200/"
     let base = "https://api.darksky.net/forecast/"
     var location = ""
-    var selectedLocation = ""
+    var selectedLocation = "\(37.804363),\(-121.271111)"
     
     //USED FOR LOCATION BASED CALL
-    public func buildSelectedURL(constructedUrl: String) -> URL {
+    public func buildSelectedURL() -> URL {
         let selectedLocationString = "\(selectedLocation)"
-        selectedUrlString = "\(base)\(apiKey)\(selectedLocationString)"
+        let selectedUrlString = "\(base)\(apiKey)\(selectedLocationString)"
         let url = URL(string: selectedUrlString)
         return url!
     }
@@ -31,7 +31,7 @@ class Networking {
         
         let session = URLSession.shared
     
-        var task = session.dataTask(with: buildURL(latitude: 37.804363, longitude: -121.271111)) { data, response, error in
+        let task = session.dataTask(with: buildSelectedURL()) { data, response, error in
             print("Start")
             
             guard let unwrappedData = data else {return}
