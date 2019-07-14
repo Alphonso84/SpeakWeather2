@@ -23,6 +23,8 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     var wasSwitched = false
     var Hourly = [Date]()
     var Weekly = [String]()
+    var test = 1 == 1
+   
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -44,7 +46,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     let Oakland = City(name: "Oakland", condition: "Sunny", temp: "70", image: UIImage(named: "Oakland")!)
     let Antioch = City(name: "Antioch", condition: "Sunny", temp: "76", image: UIImage(named:"Antioch")!)
     let SanLeandro = City(name: "San Leandro", condition: "Cloudy", temp: "56", image: UIImage(named: "SAN LEANDRO")!)
-    let cellScaling: CGFloat = 0.6
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteCities.count
@@ -119,6 +121,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     override func viewDidLoad() {
+        print(test)
         super.viewDidLoad()
         tableView.dataSource = self
         collectionView.dataSource = self

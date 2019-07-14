@@ -8,7 +8,13 @@
 
 import Foundation
 import CoreLocation
-
+struct WeatherForecast: Codable, Hashable {
+    var weatherData:Currently
+    init(weatherData:Currently) {
+        self.weatherData = weatherData
+    }
+  
+}
 class Networking {
     
     let apiKey = "8a0189f3ea88f1c0c56e4845fdf28200/"
@@ -37,17 +43,18 @@ class Networking {
             guard let unwrappedData = data else {return}
             do {
                 
-                
-                let jsonData = try JSONSerialization.jsonObject(with: unwrappedData, options: .allowFragments ) as! [String:AnyObject]
+                let jsonDecoder = JSONDecoder()
+                let jsonData = try jsonDecoder.decode(Array<WeatherForecast>.self, from: unwrappedData)
+//                let jsonData = try JSONSerialization.jsonObject(with: unwrappedData, options: .allowFragments ) as! [String:AnyObject]
                 
                 print(jsonData)
-                let currentWeather = jsonData["currently"] as? [String : AnyObject]
+//                let currentWeather = jsonData["currently"] as? [String : AnyObject]
+//                let dailyWeather = jsonData["daily"] as? [String : AnyObject]
+//                let hourlyWeather = jsonData["hourly"]
+//                let minutelyWeather = jsonData["minutely"] as? [String:AnyObject]
                 
-                let dailyWeather = jsonData["daily"] as? [String : AnyObject]
+            
                 
-                let minutelyWeather = jsonData["minutely"] as? [String:AnyObject]
-                
-
             } catch {
                 print(error)
             }

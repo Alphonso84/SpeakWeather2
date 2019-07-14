@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-struct Currently: Codable {
+struct Currently: Codable, Hashable {
     var apparentTemperature: Double?
     var cloudCover: Double?
     var dewPoint: Double?
