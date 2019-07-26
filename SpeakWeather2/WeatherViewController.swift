@@ -17,9 +17,10 @@ struct City {
 
 var favoriteCities = [City]()
 
-class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var indexPathObject = IndexPath()
     var wasSwitched = false
     var Hourly = [Date]()
     var Weekly = [String]()
@@ -32,8 +33,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         tableView.reloadData()
         wasSwitched = !wasSwitched
         print("\(wasSwitched)")
-        returnTableRows()
-        
+    
     }
     
     
@@ -55,7 +55,9 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CityWeatherCell
+        
         cell.cityLabel.text = favoriteCities[indexPath.row].name
+        
         cell.weatherConditionLabel.text = favoriteCities[indexPath.row].condition
         cell.temperatureLabel.text = favoriteCities[indexPath.row].temp
         return cell
@@ -65,7 +67,9 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
         print(scrollView.contentOffset.x)
         //  Changing the backGroundImage based on where the user scrolls.
         let offset = scrollView.contentOffset.x
@@ -84,17 +88,11 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    func returnTableRows() -> Int {
-        
-        if wasSwitched == false {
-            return 5
-        }else{
-            return 10
-        }
-    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return returnTableRows()
+    
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

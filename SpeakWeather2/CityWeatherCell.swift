@@ -15,6 +15,7 @@ class CityWeatherCell:UICollectionViewCell {
     @IBOutlet weak var weatherConditionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 20
