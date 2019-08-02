@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		897D133B22F4B0CA00B69821 /* DateAndTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D133A22F4B0CA00B69821 /* DateAndTimeManager.swift */; };
 		89C6256722B49BDF0078077D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6256622B49BDF0078077D /* WeatherModel.swift */; };
 		89C6256A22B4A03A0078077D /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6256922B4A03A0078077D /* WeatherData.swift */; };
 		89C991E6223F2FD1007DE8A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C991E5223F2FD1007DE8A4 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		897D133A22F4B0CA00B69821 /* DateAndTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeManager.swift; sourceTree = "<group>"; };
 		89C6256622B49BDF0078077D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		89C6256922B4A03A0078077D /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		89C991E2223F2FD1007DE8A4 /* SpeakWeather2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakWeather2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				899C895B22B49A2B003F089D /* Data */,
 				89C991E5223F2FD1007DE8A4 /* AppDelegate.swift */,
 				89C991E7223F2FD1007DE8A4 /* WeatherViewController.swift */,
+				897D133A22F4B0CA00B69821 /* DateAndTimeManager.swift */,
 				89C991F7223F30AC007DE8A4 /* CityWeatherCell.swift */,
 				89D0A5F522A4828500FB54DB /* HourlyTableViewCell.swift */,
 				89C991E9223F2FD1007DE8A4 /* Main.storyboard */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C991F8223F30AC007DE8A4 /* CityWeatherCell.swift in Sources */,
+				897D133B22F4B0CA00B69821 /* DateAndTimeManager.swift in Sources */,
 				89C991E8223F2FD1007DE8A4 /* WeatherViewController.swift in Sources */,
 				89D0A5F622A4828500FB54DB /* HourlyTableViewCell.swift in Sources */,
 				89C991E6223F2FD1007DE8A4 /* AppDelegate.swift in Sources */,

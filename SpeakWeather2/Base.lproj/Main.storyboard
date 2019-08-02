@@ -90,7 +90,7 @@
                                         <rect key="frame" x="91" y="347" width="195" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
-                                            <segment title="Today"/>
+                                            <segment title="Day"/>
                                             <segment title="Week"/>
                                         </segments>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
