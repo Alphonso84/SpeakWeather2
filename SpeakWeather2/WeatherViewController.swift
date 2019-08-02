@@ -96,11 +96,12 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! HourlyTableViewCell
+        
         if wasSwitched == true{
-            cell.textLabel?.text = "Week"
+            cell.timeLabel?.text = "Week"
         } else {
-            cell.textLabel?.text = "Today"
+            cell.timeLabel?.text = "Today"
         }
         return cell
     }

@@ -11,7 +11,9 @@ import UIKit
 
 class HourlyTableViewCell: UITableViewCell {
     
-    var timeLabel = UILabel()
-    var weatherImage = UIImageView()
-    var temp = UILabel()
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
+    
+    @IBOutlet weak var temp: UILabel!
+   
 }
