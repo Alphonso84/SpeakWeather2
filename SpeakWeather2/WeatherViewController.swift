@@ -17,7 +17,7 @@ struct City {
 
 var favoriteCities = [City]()
 
-class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDataSource {
+class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var indexPathObject = IndexPath()
@@ -95,6 +95,8 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         return 7
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! HourlyTableViewCell
         
@@ -104,6 +106,12 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
             cell.timeLabel?.text = "Today"
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableView.rowHeight = CGFloat(80)
+        
+        return tableView.rowHeight
     }
     
     //    func addFavoriteCity(name:String) ->City {

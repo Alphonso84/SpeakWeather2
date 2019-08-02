@@ -15,5 +15,7 @@ class HourlyTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     
     @IBOutlet weak var temp: UILabel!
-   
+    override func layoutSubviews() {
+        print(self.frame.height)
+    }
 }
