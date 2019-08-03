@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-class HourlyTableViewCell: UITableViewCell {
+class WeatherTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
-    
     @IBOutlet weak var temp: UILabel!
+    
     override func layoutSubviews() {
     }
+    
 }
