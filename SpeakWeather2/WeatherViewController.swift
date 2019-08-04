@@ -7,15 +7,7 @@
 //  EXPERIMENTAL NOT PRODUCTION
 
 import UIKit
-
-struct City {
-    let name: String
-    let condition: String
-    let temp: String
-    let image: UIImage
-}
-
-var favoriteCities = [City]()
+import Foundation
 
 class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -25,7 +17,9 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     var Hourly = [Date]()
     var Weekly = [String]()
     var test = 1 == 1
-   
+    var myCities = CityManager().favoriteCities
+    var daysOfTheWeekArray = DateAndTimeManager().daysArrayLogic()
+    var timeOfDayArray = DateAndTimeManager().timeOfDayArrayAssignment()
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -42,24 +36,32 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    let SanFrancisco = City(name: "San Francisco", condition: "Partly Cloudy", temp: "54", image: UIImage(named: "SF")!)
-    let Oakland = City(name: "Oakland", condition: "Sunny", temp: "70", image: UIImage(named: "Oakland")!)
-    let Antioch = City(name: "Antioch", condition: "Sunny", temp: "76", image: UIImage(named:"Antioch")!)
-    let SanLeandro = City(name: "San Leandro", condition: "Cloudy", temp: "56", image: UIImage(named: "SAN LEANDRO")!)
+   override func viewWillAppear(_ animated: Bool) {
+    DateAndTimeManager().timeOfDayArrayAssignment()
+    DateAndTimeManager().daysArrayLogic()
+   }
    
+   
+   override func viewDidLoad() {
+       print(test)
+       super.viewDidLoad()
+       tableView.dataSource = self
+       collectionView.dataSource = self
+       Networking().getSelectedWeatherForecast()
+   }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favoriteCities.count
+        return myCities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CityWeatherCell
         
-        cell.cityLabel.text = favoriteCities[indexPath.row].name
+        cell.cityLabel.text = myCities[indexPath.row].name
         
-        cell.weatherConditionLabel.text = favoriteCities[indexPath.row].condition
-        cell.temperatureLabel.text = favoriteCities[indexPath.row].temp
+        cell.weatherConditionLabel.text = myCities[indexPath.row].currentCondition
+        cell.temperatureLabel.text = myCities[indexPath.row].temp
         return cell
     }
     
@@ -96,14 +98,15 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! HourlyTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! WeatherTableViewCell
         
         if wasSwitched == true{
-            cell.timeLabel?.text = "Week"
+            cell.timeLabel?.text = daysOfTheWeekArray[indexPath.row]
+            cell.temp?.text = "54"
         } else {
-            cell.timeLabel?.text = "Today"
+            cell.timeLabel?.text = timeOfDayArray[indexPath.row]
+            cell.temp?.text = "74"
         }
         return cell
     }
@@ -113,28 +116,6 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return tableView.rowHeight
     }
-    
-    //    func addFavoriteCity(name:String) ->City {
-    //
-    //        return City
-    //    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        favoriteCities.append(SanFrancisco)
-        favoriteCities.append(Oakland)
-        favoriteCities.append(Antioch)
-        favoriteCities.append(SanLeandro)
-    }
-    
-    
-    override func viewDidLoad() {
-        print(test)
-        super.viewDidLoad()
-        tableView.dataSource = self
-        collectionView.dataSource = self
-        Networking().getSelectedWeatherForecast()
-    }
-    
     
 }
 
