@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 import CoreLocation
+import MapKit
 
 class Networking {
     
@@ -15,6 +17,14 @@ class Networking {
     let base = "https://api.darksky.net/forecast/"
     var location = ""
     var selectedLocation = "\(37.8044),\(-122.2712)"
+    
+    
+    
+    public func networkCheck() {
+        
+         
+        
+     }
     
     //USED FOR LOCATION BASED CALL
     public func buildSelectedURL() -> URL {

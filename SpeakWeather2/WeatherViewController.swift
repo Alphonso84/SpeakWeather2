@@ -48,6 +48,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
        tableView.dataSource = self
        collectionView.dataSource = self
        Networking().getSelectedWeatherForecast()
+       segmentedControl.bringSubviewToFront(self.segmentedControl)
    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
