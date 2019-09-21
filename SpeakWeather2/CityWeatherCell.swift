@@ -19,6 +19,14 @@ class CityWeatherCell:UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 20
+        if #available(iOS 13.0, *) {
+            layer.borderColor = UIColor.systemGray2.cgColor
+            layer.shadowColor = UIColor.systemGray.cgColor
+        } else {
+            // Fallback on earlier versions
+        }
+        layer.borderWidth = 1
+        layer.shadowPath = UIBezierPath(rect: layer.bounds).cgPath
         self.clipsToBounds = false
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.3

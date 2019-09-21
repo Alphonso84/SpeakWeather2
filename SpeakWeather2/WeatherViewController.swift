@@ -121,7 +121,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.rowHeight = CGFloat(80)
+        tableView.rowHeight = CGFloat(60)
         
         return tableView.rowHeight
     }
