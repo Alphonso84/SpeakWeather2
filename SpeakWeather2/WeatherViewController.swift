@@ -59,6 +59,14 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CityWeatherCell
         
+        if #available(iOS 13.0, *) {
+            tableView.separatorColor = .separator
+            cell.cityLabel.textColor = .label
+            cell.weatherConditionLabel.textColor = .label
+            cell.temperatureLabel.textColor = .label
+        } else {
+            // Fallback on earlier versions
+        }
         cell.cityLabel.text = myCities[indexPath.row].name
         
         cell.weatherConditionLabel.text = myCities[indexPath.row].currentCondition

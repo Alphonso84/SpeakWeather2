@@ -16,6 +16,12 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var temp: UILabel!
     
     override func layoutSubviews() {
+        if #available(iOS 13.0, *) {
+            timeLabel.textColor = .label
+            temp.textColor = .label
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
 }
