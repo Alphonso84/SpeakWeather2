@@ -8,11 +8,6 @@
 
 import Foundation
 
-
-
-
-
-
 extension Date {
     func dayOfWeek() -> String? {
         let dateFormatter = DateFormatter()
@@ -39,11 +34,11 @@ class DateAndTimeManager {
     
     func getDayOfWeek(today:String)->Int? {
         formatter.dateFormat = "yyyy-MM-dd"
-        let todayDate = formatter.date(from: today)!
-        let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        guard let todayDate = formatter.date(from: today) else {return nil}
+        guard let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian) else {return nil}
         let myComponents = myCalendar.components(.weekday, from: todayDate)
         let weekDay = myComponents.weekday
-        return weekDay!
+        return weekDay
     }
     
     

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class CityWeatherCell:UICollectionViewCell {
+class CityWeatherCell: UICollectionViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherConditionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!

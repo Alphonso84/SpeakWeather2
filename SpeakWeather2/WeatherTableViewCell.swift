@@ -18,14 +18,10 @@ class WeatherTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.borderWidth = 1
+        layer.borderColor = UIColor.systemGray2.cgColor
+        timeLabel.textColor = .label
+        temp.textColor = .label
         
-        if #available(iOS 13.0, *) {
-            layer.borderColor = UIColor.systemGray2.cgColor
-            timeLabel.textColor = .label
-            temp.textColor = .label
-        } else {
-            // Fallback on earlier versions
-        }
     }
     
 }

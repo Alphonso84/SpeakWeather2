@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		897D133B22F4B0CA00B69821 /* DateAndTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D133A22F4B0CA00B69821 /* DateAndTimeManager.swift */; };
 		897D133D22F4FEAB00B69821 /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D133C22F4FEAB00B69821 /* CityManager.swift */; };
+		899899C7285E62FC00352BBE /* WeatherViewControllerTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899899C6285E62FC00352BBE /* WeatherViewControllerTableViewDelegate.swift */; };
 		89A4E07F22F67D2F00AF3B71 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4E07E22F67D2F00AF3B71 /* Reachability.swift */; };
 		89C6256722B49BDF0078077D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6256622B49BDF0078077D /* WeatherModel.swift */; };
 		89C6256A22B4A03A0078077D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6256922B4A03A0078077D /* Networking.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		897D133A22F4B0CA00B69821 /* DateAndTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeManager.swift; sourceTree = "<group>"; };
 		897D133C22F4FEAB00B69821 /* CityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
+		899899C6285E62FC00352BBE /* WeatherViewControllerTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerTableViewDelegate.swift; sourceTree = "<group>"; };
 		89A4E07E22F67D2F00AF3B71 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		89C6256622B49BDF0078077D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		89C6256922B4A03A0078077D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				899C895B22B49A2B003F089D /* Data */,
 				89C991E5223F2FD1007DE8A4 /* AppDelegate.swift */,
 				89C991E7223F2FD1007DE8A4 /* WeatherViewController.swift */,
+				899899C6285E62FC00352BBE /* WeatherViewControllerTableViewDelegate.swift */,
 				897D133C22F4FEAB00B69821 /* CityManager.swift */,
 				897D133A22F4B0CA00B69821 /* DateAndTimeManager.swift */,
 				89C991F7223F30AC007DE8A4 /* CityWeatherCell.swift */,
@@ -178,6 +181,7 @@
 				89C991E8223F2FD1007DE8A4 /* WeatherViewController.swift in Sources */,
 				89D0A5F622A4828500FB54DB /* WeatherTableViewCell.swift in Sources */,
 				89C991E6223F2FD1007DE8A4 /* AppDelegate.swift in Sources */,
+				899899C7285E62FC00352BBE /* WeatherViewControllerTableViewDelegate.swift in Sources */,
 				89C6256A22B4A03A0078077D /* Networking.swift in Sources */,
 				89C6256722B49BDF0078077D /* WeatherModel.swift in Sources */,
 				89A4E07F22F67D2F00AF3B71 /* Reachability.swift in Sources */,
@@ -257,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -312,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -335,7 +339,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alphonso-Sensley-II.SpeakWeather2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -353,7 +357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alphonso-Sensley-II.SpeakWeather2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

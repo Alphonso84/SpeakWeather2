@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class WeatherViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var indexPathObject = IndexPath()
@@ -47,7 +47,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
        super.viewDidLoad()
        tableView.dataSource = self
        collectionView.dataSource = self
-       Networking().getSelectedWeatherForecast()
+  //   Networking().getSelectedWeatherForecast()
        segmentedControl.bringSubviewToFront(self.segmentedControl)
    }
     
@@ -58,17 +58,11 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CityWeatherCell
-        
-        if #available(iOS 13.0, *) {
-            tableView.separatorColor = .separator
-            cell.cityLabel.textColor = .label
-            cell.weatherConditionLabel.textColor = .label
-            cell.temperatureLabel.textColor = .label
-        } else {
-            // Fallback on earlier versions
-        }
+        tableView.separatorColor = .separator
+        cell.cityLabel.textColor = .label
+        cell.weatherConditionLabel.textColor = .label
+        cell.temperatureLabel.textColor = .label
         cell.cityLabel.text = myCities[indexPath.row].name
-        
         cell.weatherConditionLabel.text = myCities[indexPath.row].currentCondition
         cell.temperatureLabel.text = myCities[indexPath.row].temp
         return cell
@@ -98,33 +92,6 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
     }
-    
-   
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        return 7
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! WeatherTableViewCell
-        
-        if wasSwitched == true{
-            cell.timeLabel?.text = daysOfTheWeekArray[indexPath.row]
-            cell.temp?.text = "54"
-        } else {
-            cell.timeLabel?.text = timeOfDayArray[indexPath.row]
-            cell.temp?.text = "74"
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.rowHeight = CGFloat(60)
-        
-        return tableView.rowHeight
-    }
-    
+
 }
 
