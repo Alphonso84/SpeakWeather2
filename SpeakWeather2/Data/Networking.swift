@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 import CoreLocation
 import MapKit
+import WeatherKit
 
 class Networking {
-    
+    //TODO: Update to use WeatherKit
     let apiKey = "8a0189f3ea88f1c0c56e4845fdf28200/"
     let base = "https://api.darksky.net/forecast/"
     var location = ""
