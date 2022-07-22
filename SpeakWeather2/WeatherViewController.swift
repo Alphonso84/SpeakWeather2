@@ -18,7 +18,8 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     var Weekly = [String]()
     var test = 1 == 1
     var myCities = CityManager().favoriteCities
-    var daysOfTheWeekArray = DateAndTimeManager().daysArrayLogic()
+    var daysOfTheWeekArray : [String] { DateAndTimeManager().daysArrayLogic()
+    }
     var timeOfDayArray = DateAndTimeManager().timeOfDayArrayAssignment()
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -37,8 +38,8 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
    override func viewWillAppear(_ animated: Bool) {
-    DateAndTimeManager().timeOfDayArrayAssignment()
-    DateAndTimeManager().daysArrayLogic()
+//    DateAndTimeManager().timeOfDayArrayAssignment()
+//    DateAndTimeManager().daysArrayLogic()
    }
    
    

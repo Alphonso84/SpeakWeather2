@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,25 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKe-fY-3Tv">
-                                <rect key="frame" x="16" y="44" width="139" height="39"/>
+                                <rect key="frame" x="16" y="44" width="139" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="QWS-SN-Saf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-Y5-qEh">
-                                <rect key="frame" x="0.0" y="91" width="375" height="721"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-Y5-qEh">
+                                <rect key="frame" x="0.0" y="81" width="375" height="731"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Xz-Wj-6WY">
-                                        <rect key="frame" x="8" y="302" width="359" height="396"/>
+                                        <rect key="frame" x="8" y="302" width="359" height="398"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="separatorColor" systemColor="labelColor"/>
                                         <color key="sectionIndexColor" systemColor="labelColor"/>
                                         <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="91.666664123535156" id="Y63-Xj-NRC" customClass="WeatherTableViewCell" customModule="SpeakWeather2" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="359" height="91.666664123535156"/>
+                                                <rect key="frame" x="0.0" y="44.666666030883789" width="359" height="91.666664123535156"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y63-Xj-NRC" id="nAc-2N-5f3">
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="91.666664123535156"/>
@@ -104,7 +104,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" contentInsetAdjustmentBehavior="always" maximumZoomScale="12" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CEV-Vi-W4H">
-                                        <rect key="frame" x="0.0" y="32" width="375" height="185"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="237"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AJa-xb-qb2">
                                             <size key="itemSize" width="282" height="203"/>
@@ -114,7 +114,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="center" reuseIdentifier="myCell" id="oFz-tc-4Qp" customClass="CityWeatherCell" customModule="SpeakWeather2" customModuleProvider="target">
-                                                <rect key="frame" x="45" y="-9" width="282" height="203"/>
+                                                <rect key="frame" x="45" y="17" width="282" height="203"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="282" height="203"/>
@@ -169,11 +169,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="1Xz-Wj-6WY" secondAttribute="bottom" constant="23" id="2sh-xZ-uME"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Xz-Wj-6WY" secondAttribute="bottom" constant="31" id="2sh-xZ-uME"/>
                                     <constraint firstItem="CEV-Vi-W4H" firstAttribute="trailing" secondItem="hCg-Y5-qEh" secondAttribute="trailing" id="5TS-HZ-b0H"/>
                                     <constraint firstItem="CEV-Vi-W4H" firstAttribute="leading" secondItem="hCg-Y5-qEh" secondAttribute="leading" id="Agj-bK-QlL"/>
-                                    <constraint firstItem="CEV-Vi-W4H" firstAttribute="top" secondItem="hCg-Y5-qEh" secondAttribute="topMargin" constant="24" id="DC6-58-03Q"/>
-                                    <constraint firstItem="Bd9-01-FDi" firstAttribute="top" secondItem="CEV-Vi-W4H" secondAttribute="bottom" constant="46" id="NYv-6n-a9U"/>
+                                    <constraint firstItem="CEV-Vi-W4H" firstAttribute="top" secondItem="hCg-Y5-qEh" secondAttribute="topMargin" id="DC6-58-03Q"/>
+                                    <constraint firstItem="Bd9-01-FDi" firstAttribute="top" secondItem="CEV-Vi-W4H" secondAttribute="bottom" constant="18" id="NYv-6n-a9U"/>
                                     <constraint firstItem="1Xz-Wj-6WY" firstAttribute="top" secondItem="hCg-Y5-qEh" secondAttribute="top" constant="302" id="X7d-ak-YNQ"/>
                                     <constraint firstItem="1Xz-Wj-6WY" firstAttribute="top" secondItem="Bd9-01-FDi" secondAttribute="bottom" constant="8" id="dnE-Zb-Auh"/>
                                     <constraint firstItem="Bd9-01-FDi" firstAttribute="leading" secondItem="hCg-Y5-qEh" secondAttribute="leading" constant="90" id="im6-38-roG"/>
@@ -182,12 +182,8 @@
                                     <constraint firstAttribute="trailing" secondItem="1Xz-Wj-6WY" secondAttribute="trailing" constant="8" id="yWv-3J-aIs"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfm-GZ-thl">
-                                <rect key="frame" x="-7" y="95" width="489" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBz-Fv-CcZ">
-                                <rect key="frame" x="333" y="51" width="26" height="24"/>
+                                <rect key="frame" x="333" y="51" width="26" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -198,20 +194,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vBz-Fv-CcZ" secondAttribute="trailing" constant="16" id="0OY-9n-LVA"/>
-                            <constraint firstItem="vfm-GZ-thl" firstAttribute="top" secondItem="pKe-fY-3Tv" secondAttribute="bottom" constant="12" id="4zV-Z2-TuZ"/>
                             <constraint firstItem="hCg-Y5-qEh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="All-0l-QdB"/>
                             <constraint firstItem="pKe-fY-3Tv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Co7-Zu-K8N"/>
                             <constraint firstItem="pKe-fY-3Tv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EaT-VX-oVB"/>
                             <constraint firstItem="hCg-Y5-qEh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GUN-I3-62C"/>
                             <constraint firstItem="vBz-Fv-CcZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Ow6-lx-3Hu"/>
-                            <constraint firstItem="hCg-Y5-qEh" firstAttribute="top" secondItem="pKe-fY-3Tv" secondAttribute="bottom" constant="8" id="PTH-1P-K5f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vfm-GZ-thl" secondAttribute="bottom" constant="682" id="WWf-Xj-MKC"/>
+                            <constraint firstItem="hCg-Y5-qEh" firstAttribute="top" secondItem="pKe-fY-3Tv" secondAttribute="bottom" id="PTH-1P-K5f"/>
                             <constraint firstItem="vBz-Fv-CcZ" firstAttribute="leading" secondItem="pKe-fY-3Tv" secondAttribute="trailing" constant="178" id="X7V-r5-ZaI"/>
-                            <constraint firstItem="hCg-Y5-qEh" firstAttribute="top" secondItem="pKe-fY-3Tv" secondAttribute="bottom" constant="8" id="Y7E-XP-Xdn"/>
-                            <constraint firstAttribute="trailing" secondItem="vfm-GZ-thl" secondAttribute="trailing" constant="-107" id="iO2-hB-SF4"/>
+                            <constraint firstItem="hCg-Y5-qEh" firstAttribute="top" secondItem="pKe-fY-3Tv" secondAttribute="bottom" id="Y7E-XP-Xdn"/>
                             <constraint firstAttribute="bottom" secondItem="hCg-Y5-qEh" secondAttribute="bottom" id="oz0-RL-NaZ"/>
-                            <constraint firstItem="vfm-GZ-thl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-23" id="srt-z9-L0d"/>
-                            <constraint firstItem="hCg-Y5-qEh" firstAttribute="top" secondItem="vBz-Fv-CcZ" secondAttribute="bottom" constant="16" id="tmT-Ur-5nu"/>
+                            <constraint firstItem="hCg-Y5-qEh" firstAttribute="top" secondItem="vBz-Fv-CcZ" secondAttribute="bottom" constant="8" id="tmT-Ur-5nu"/>
                         </constraints>
                     </view>
                     <connections>
