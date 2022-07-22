@@ -17,19 +17,16 @@ class Networking {
     let base = "https://api.darksky.net/forecast/"
     var location = ""
     var selectedLocation = "\(37.8044),\(-122.2712)"
-    
-    
+    var selectedUrlString : String {
+        "\(base)\(apiKey)\(selectedLocation)"
+    }
     
     public func networkCheck() {
-        
-         
-        
+      
      }
     
     //USED FOR LOCATION BASED CALL
     public func buildSelectedURL() -> URL {
-        let selectedLocationString = "\(selectedLocation)"
-        let selectedUrlString = "\(base)\(apiKey)\(selectedLocationString)"
         let url = URL(string: selectedUrlString)
         return url!
     }
@@ -57,8 +54,6 @@ class Networking {
                 let hourlyWeather = jsonData["hourly"]
                 let minutelyWeather = jsonData["minutely"] as? [String:AnyObject]
                 print(weatherData!)
-                
-                
             } catch {
                 print(error)
             }

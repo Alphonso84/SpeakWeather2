@@ -20,7 +20,6 @@ struct City {
 
 class CityManager {
     public var favoriteCities = [City]()
-    
     let SanFrancisco = City(name: "San Francisco", currentCondition: "Partly Cloudy", temp: "54", image: UIImage(named: "SF")!, icon: [], forecastedConditions: [])
     let Oakland = City(name: "Oakland", currentCondition: "Sunny", temp: "70", image: UIImage(named: "Oakland")!, icon: [], forecastedConditions: [])
     let Antioch = City(name: "Antioch", currentCondition: "Sunny", temp: "76", image: UIImage(named:"Antioch")!, icon: [], forecastedConditions: [])
