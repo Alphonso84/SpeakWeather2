@@ -37,19 +37,21 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-   override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 //    DateAndTimeManager().timeOfDayArrayAssignment()
 //    DateAndTimeManager().daysArrayLogic()
+        
    }
    
    
-   override func viewDidLoad() {
-       print(test)
+ override func viewDidLoad(){
        super.viewDidLoad()
        tableView.dataSource = self
        collectionView.dataSource = self
   //   Networking().getSelectedWeatherForecast()
        segmentedControl.bringSubviewToFront(self.segmentedControl)
+     //
    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,7 +81,7 @@ class WeatherViewController: UIViewController, UICollectionViewDelegate, UIColle
         print(scrollView.contentOffset.x)
         //  Changing the backGroundImage based on where the user scrolls.
         let offset = scrollView.contentOffset.x
-        
+       
         if offset < 216.5 {
             //backgroundImageView.image = favoriteCities[0].image
         } else if offset < 433 {
